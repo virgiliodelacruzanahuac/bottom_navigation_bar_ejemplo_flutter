@@ -1,7 +1,7 @@
-import 'package:bottom_navigation_bar_example/page/chat_page.dart';
-import 'package:bottom_navigation_bar_example/page/feed_page.dart';
-import 'package:bottom_navigation_bar_example/page/home_page.dart';
-import 'package:bottom_navigation_bar_example/page/profile_page.dart';
+import 'chat_page.dart';
+import 'feed_page.dart';
+import 'home_page.dart';
+import 'profile_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -22,7 +22,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int currentIndex = 0;
-  final screens = [
+  final List<Widget> screens = [
     HomePage(),
     FeedPage(),
     ChatPage(),
@@ -47,7 +47,7 @@ class _MainPageState extends State<MainPage> {
           // showUnselectedLabels: false,
           currentIndex: currentIndex,
           onTap: (index) => setState(() => currentIndex = index),
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
